@@ -10,7 +10,7 @@ This template uses pnpm as its package manager. Make sure you have pnpm installe
 npm install -g pnpm
 ```
 
-This is a solid template to build a modern Ethereum/EVM UI that interacts with the blockchain. It provides a robust foundation for developing dApps with cutting-edge UI components, streamlined wallet integrations, and efficient blockchain communication. Whether you're building a DeFi app, NFT project, or any blockchain-powered application, this template gives you the essential building blocks to get started quickly.
+This is a template to build a modern Ethereum/EVM UI that interacts with the blockchain. It provides a robust foundation for developing dApps with cutting-edge UI components, streamlined wallet integrations, and efficient blockchain communication. Whether you're building a DeFi app, NFT project, or any blockchain-powered application, this template gives you the essential building blocks to get started quickly.
 
 ## Usage
 
@@ -63,9 +63,3 @@ When adding a new ABI, follow these steps:
    ```bash
    pnpm generate
    ```
-   
-   (Use your package manager's equivalent command if not using pnpm.)
-
----
-
-This template packs in everything you need for building a robust and scalable Ethereum interface, from integrated wallet connection libraries to efficient blockchain communication tools. It's built to help you focus on developing unique features for your dApp, while handling the heavy lifting of blockchain interactions and state management for you.

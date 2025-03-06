@@ -1,7 +1,6 @@
 {
   "name": "evm-ui",
-  "version": "0.3.0",
-  "author": "zeJabun",
+  "version": "1.0.0",
   "private": false,
   "scripts": {
     "build": "turbo build",
