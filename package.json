@@ -3,9 +3,6 @@
   "version": "0.3.0",
   "author": "zeJabun",
   "private": false,
-  "bin": {
-    "evm-ui": "./bin/cli.js"
-  },
   "scripts": {
     "build": "turbo build",
     "dev": "turbo dev",
