@@ -1,7 +1,11 @@
 {
   "name": "evm-ui",
-  "version": "0.0.1",
-  "private": true,
+  "version": "0.1.0",
+  "author": "zeJabun",
+  "private": false,
+  "bin": {
+    "evm-ui": "./bin/cli.js"
+  },
   "scripts": {
     "build": "turbo build",
     "dev": "turbo dev",

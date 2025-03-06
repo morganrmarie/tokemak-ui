@@ -7,7 +7,7 @@ This is a solid template to build a modern Ethereum/EVM UI that interacts with t
 ## Usage
 
 ```bash
-pnpm dlx shadcn@latest init
+pnpm dlx evm-ui@latest init
 ```
 
 ## Adding components
@@ -15,7 +15,7 @@ pnpm dlx shadcn@latest init
 To add components to your app, run the following command at the root of your `interface` app:
 
 ```bash
-pnpm dlx shadcn@latest add button -c apps/interface
+pnpm dlx shadcn@latest add button
 ```
 
 This will place the UI components in the `packages/ui/src/components` directory.
