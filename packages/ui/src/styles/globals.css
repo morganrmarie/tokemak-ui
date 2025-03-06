@@ -1,3 +1,5 @@
+@import "@rainbow-me/rainbowkit/styles.css";
+
 @import "tailwindcss";
 @source "../../../apps/**/*.{ts,tsx}";
 @source "../../../components/**/*.{ts,tsx}";

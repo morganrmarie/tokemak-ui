@@ -1,0 +1,19 @@
+{
+    "name": "@workspace/contracts",
+    "version": "0.0.0",
+    "type": "module",
+    "private": true,
+    "exports": {
+      ".": "./index.ts"
+    },
+    "scripts": {
+      "generate": "wagmi generate",
+      "lint": "eslint \"src/**/*.ts*\"",
+      "clean": "rimraf .turbo node_modules dist"
+    },
+    "devDependencies": {
+      "@wagmi/cli": "2.2.0",
+      "@workspace/eslint-config": "workspace:*"
+    }
+  }
+  
