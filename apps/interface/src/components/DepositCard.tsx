@@ -3,9 +3,11 @@ import { useState } from "react";
 import { useUSDCBalance } from "@/hooks/useUSDCBalance";
 import { useApproveUSDC } from "@/hooks/useApproveUSDC";
 import { useDepositUSDC } from "@/hooks/useDepositUSDC";
+import { useTokemakBaseUSDCBalance } from "@/hooks/useTokemakBaseUSDCBalance";
 
 export const DepositCard = () => {
   const { balance, isLoading, isConnected } = useUSDCBalance();
+  const { balance: tokemakBalance } = useTokemakBaseUSDCBalance();
   const { approve } = useApproveUSDC();
   const [approveBalance, setApproveBalance] = useState("0");
   const { deposit, error } = useDepositUSDC();
@@ -77,7 +79,7 @@ export const DepositCard = () => {
 
       <div className="flex justify-between text-sm text-gray-400">
         <span>Your autoUSDC balance</span>
-        <span className="text-white">0.00</span>
+        <span className="text-white">{Number(tokemakBalance).toFixed(2)}</span>
       </div>
     </div>
   );
