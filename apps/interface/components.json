@@ -7,7 +7,14 @@
     "config": "",
     "css": "../../packages/ui/src/styles/globals.css",
     "baseColor": "neutral",
-    "cssVariables": true
+    "cssVariables": true,
+    "theme": {
+      "extend": {
+        "fontFamily": {
+          "sans": ["var(--font-sans)", "sans-serif"]
+        }
+      }
+    }
   },
   "iconLibrary": "lucide",
   "aliases": {
