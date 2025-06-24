@@ -16,7 +16,6 @@ export const useUSDCBalance = () => {
     args: [address],
   });
 
-  console.log(data);
   const formatted = data ? formatUnits(data as bigint, USDC_DECIMALS) : "0.00";
 
   return {

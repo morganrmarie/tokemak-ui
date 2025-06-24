@@ -13,9 +13,12 @@ export const useTokemakBaseUSDCBalance = () => {
     abi: BASE_USDC_ABI,
     functionName: "balanceOf",
     args: [address],
+    query: {
+      enabled: !!address,
+      refetchInterval: 5000,
+    },
   });
 
-  console.log(data);
   const formatted = data ? formatUnits(data as bigint, 18) : "0.00";
 
   return {

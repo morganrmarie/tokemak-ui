@@ -8,11 +8,18 @@ import { useTokemakBaseUSDCBalance } from "@/hooks/useTokemakBaseUSDCBalance";
 export const DepositCard = () => {
   const { balance, isLoading, isConnected } = useUSDCBalance();
   const { balance: tokemakBalance } = useTokemakBaseUSDCBalance();
-  const { approve } = useApproveUSDC();
+  const { approve, isPending, error: approvalErrorUSDC } = useApproveUSDC();
   const [approveBalance, setApproveBalance] = useState("0");
-  const { deposit, error } = useDepositUSDC();
+  const [depositError, setDepositError] = useState(false);
+  const {
+    deposit,
+    isPending: depositUSDCPending,
+    error: depositErrorUSDC,
+  } = useDepositUSDC();
 
   const handleApprove = async () => {
+    approvalErrorUSDC == null;
+    setDepositError(false);
     try {
       await approve(approveBalance.toString());
       console.log("Approved!");
@@ -22,11 +29,14 @@ export const DepositCard = () => {
   };
 
   const handleDeposit = async () => {
+    approvalErrorUSDC == null;
+    setDepositError(false);
     try {
       await deposit(approveBalance);
       console.log("Deposit successful!");
     } catch (err) {
       console.error("Deposit failed", err);
+      setDepositError(true);
     }
   };
 
@@ -67,20 +77,29 @@ export const DepositCard = () => {
           className="bg-[#B5FF00] text-black font-semibold text-sm tracking-[0.5px] py-2 cursor-pointer"
           onClick={handleApprove}
         >
-          APPROVE
+          {isPending ? "PENDING..." : "APPROVE"}
         </button>
         <button
           className="bg-[#B5FF00] text-black font-semibold text-sm tracking-[0.5px] py-2 cursor-pointer"
           onClick={handleDeposit}
         >
-          DEPOSIT
+          {depositUSDCPending ? "PENDING..." : "DEPOSIT"}
         </button>
+        {(depositError || approvalErrorUSDC) && (
+          <span className="text-xs text-red-500 font-semibold">
+            Error has occured.
+          </span>
+        )}
       </div>
 
-      <div className="flex justify-between text-sm text-gray-400">
-        <span>Your autoUSDC balance</span>
-        <span className="text-white">{Number(tokemakBalance).toFixed(2)}</span>
-      </div>
+      {isConnected && (
+        <div className="flex justify-between text-sm text-gray-400">
+          <span>Your autoUSDC balance</span>
+          <span className="text-white">
+            {Number(tokemakBalance).toFixed(2)}
+          </span>
+        </div>
+      )}
     </div>
   );
 };

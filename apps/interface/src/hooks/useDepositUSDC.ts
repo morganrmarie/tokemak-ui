@@ -36,6 +36,6 @@ export const useDepositUSDC = (): UseDepositReturn => {
   return {
     deposit,
     isPending,
-    error: error as Error | null,
+    error,
   };
 };
